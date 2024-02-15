@@ -17,7 +17,7 @@ class style():
 	CYAN = '\033[36m'
 	WHITE = '\033[37m'
 	UNDERLINE = '\033[4m'
-	RESET = '\033[0m' 
+	RESET = '\033[0m'
 
 buffer = ""
 current_name = ""
@@ -111,7 +111,7 @@ def treat_message(message, client_socket):
 	if event == "already-connected":
 		print(style.RED + "You are already connected to the server, please disconnect first" + style.RESET)
 		running = False
-	
+
 
 def receive_data(client_socket):
 	global buffer
