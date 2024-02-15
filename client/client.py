@@ -131,9 +131,10 @@ grading = False
 
 def wait_for_grade():
 	global grading
+	global running
 
 	grading = True
-	while grading:
+	while grading and running:
 		print("Waiting...")
 		time.sleep(1)
 
