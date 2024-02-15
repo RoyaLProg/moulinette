@@ -4,7 +4,7 @@ import time
 #import clang.cindex
 #from clang.cindex import Index,Config,CursorKind
 
-Config.set_library_path('/opt/homebrew/opt/llvm/lib')
+#Config.set_library_path('/opt/homebrew/opt/llvm/lib')
 
 def get_trace_file(subject, client):
 	if not os.path.exists("traces"):
