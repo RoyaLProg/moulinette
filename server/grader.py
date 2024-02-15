@@ -1,8 +1,8 @@
 import os
 import subprocess
 import time
-import clang.cindex
-from clang.cindex import Index,Config,CursorKind
+#import clang.cindex
+#from clang.cindex import Index,Config,CursorKind
 
 Config.set_library_path('/opt/homebrew/opt/llvm/lib')
 
