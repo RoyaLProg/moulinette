@@ -208,7 +208,7 @@ def main():
 
 	while running:
 		if not grading and not ask_for_grade:
-			print(style.YELLOW + "API's shell" + style.RESET + "> ", end="", flush=True)
+			print(style.YELLOW + "TUTORS's shell" + style.RESET + "> ", end="", flush=True)
 		try:
 			poll_state = poll_obj.poll()
 		except KeyboardInterrupt:
