@@ -38,6 +38,8 @@ def get_client_by_address(address):
 def get_client_by_socket(fd):
 	global clients
 	for client in clients:
+		if client.socket == None :
+			continue
 		if client.socket.fileno() == fd:
 			return client
 	return None
