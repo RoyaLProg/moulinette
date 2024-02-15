@@ -4,7 +4,7 @@ import subject as subject_module
 import sys
 
 def treat_stdin(port):
-
+	print("Admin Shell >", end="", flush=True)
 	line = sys.stdin.readline().strip()
 	cmd = line.split(' ', 1)[0]
 	args = line.split(' ')[1:]
@@ -15,6 +15,7 @@ def treat_stdin(port):
 		print("\tinfos: display server infos")
 		print("\tclients: display connected clients")
 		print("\tsubject <client id> <level> [subject name]: set the subject for a client. If no subject name is specified, a random one will be chosen")
+		print("\tstop: stop the server")
 
 	if cmd == "infos":
 		print("Server infos:")
@@ -65,3 +66,8 @@ def treat_stdin(port):
 				print("Subject " + args[2] + " not found, see 'infos'")
 				return
 			client.set_subject(level, subject, level != client.level)
+	if cmd == "stop":
+		exit()
+	elif len(cmd):
+		print("\nCommand not found, use \"help\" to see avaiable commands")
+		print("Admin Shell >", end="", flush=True)
