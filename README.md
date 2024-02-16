@@ -16,7 +16,7 @@ Pour fonctionner, le projet nécessite d'avoir d'installer sur l'ordinateur serv
 -   `gcc` (ou autre compilateur qui devra être configuré pour chaque sujet)
 -   `norminette`
 -   `diff`
--   `nm`
+-   `nm` <- actuellement desactiver et non necessaire...
 
 ## 3.2. Préparation
 
@@ -70,6 +70,7 @@ Sur le serveur, les commandes disponibles sont les suivantes:
 -   `infos` Affiche les informations sur le serveur
 -   `clients` Affiche les clients connectés et leur état
 -   `subject <client id> <level> [subject name]` Permet de modifier le sujet d'un client. Si le sujet n'est pas précisé, il sera choisi aléatoirement
+-   `stop` Stop le serveur
 
 ### 3.3.2. Client
 
