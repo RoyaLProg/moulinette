@@ -3,8 +3,21 @@ import subject as subject_module
 
 import sys
 
+class style():
+	BLACK = '\033[30m'
+	RED = '\033[31m'
+	GREEN = '\033[32m'
+	YELLOW = '\033[33m'
+	BLUE = '\033[34m'
+	MAGENTA = '\033[35m'
+	CYAN = '\033[36m'
+	WHITE = '\033[37m'
+	UNDERLINE = '\033[4m'
+	RESET = '\033[0m'
+
+prompt = style.RED + "Admin Shell >" + style.RESET
+
 def treat_stdin(port):
-	print("Admin Shell >", end="", flush=True)
 	line = sys.stdin.readline().strip()
 	cmd = line.split(' ', 1)[0]
 	args = line.split(' ')[1:]
@@ -27,12 +40,12 @@ def treat_stdin(port):
 			for subject in subject_module.get_subjects()[level]:
 				print(subject.name + " ", end="")
 			print("")
-		
+
 	if cmd == "clients":
 		if client_module.get_connected_clients_count() == 0:
 			print("No connected clients")
 			return
-		
+
 		print("Connected clients:")
 		for info in client_module.get_clients_status():
 			print("\tClient " + str(info["id"]) + " | Level " + str(info["level"]) + " | Tries " + str(info["tries"]) + " | Subject " + info["subject"] + " | " + ("ONLINE" if info["connected"] else "OFFLINE"))
@@ -52,7 +65,7 @@ def treat_stdin(port):
 		if not client:
 			print("Client " + str(client_id) + " not found, see 'clients'")
 			return
-		
+
 		if not subject_module.is_subject_for_level(level):
 			print("Level " + str(level) + " not found, see 'infos'")
 			return
@@ -69,5 +82,5 @@ def treat_stdin(port):
 	if cmd == "stop":
 		exit()
 	elif len(cmd):
-		print("\nCommand not found, use \"help\" to see avaiable commands")
-		print("Admin Shell >", end="", flush=True)
+		print("Command not found, use \"help\" to see avaiable commands")
+	print(prompt, end="", flush=True)

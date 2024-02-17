@@ -30,6 +30,7 @@ def main():
 	poll_obj.register(0, select.POLLIN)
 
 	running = True
+	print(cli_module.prompt, end="", flush=True)
 	while running:
 		try:
 			poll_state = poll_obj.poll()
