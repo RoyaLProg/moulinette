@@ -39,7 +39,7 @@ def print_subject():
 	print("=============================================================")
 	print("Your current assignment is: " + style.GREEN + current_name + style.RESET)
 	print("Your subject is located at: " + style.GREEN + current_subject_file + style.RESET)
-	print("You must submit your work in the rendu folder (" + style.RED + current_complete_file + style.RESET + ")")
+	print("You must submit your work in the rendu folder (" + style.RED + "~/rendu/" + style.RESET + ")")
 	print("=============================================================")
 	print("You can now work on your assignment, when you are ready to be graded, type '" + style.GREEN + "grademe" + style.RESET + "' and press enter")
 
